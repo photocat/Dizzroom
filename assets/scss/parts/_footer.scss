@@ -1,0 +1,212 @@
+.footer {
+    width: 100%;
+    padding-top: 7rem;
+    position: relative;
+    z-index: 10;
+
+    &__wrapper {
+        padding: 5.6rem 3.6rem;
+        display: flex;
+        flex-flow: row nowrap;
+        align-items: center;
+        justify-content: space-between;
+        background-color: $grey;
+    }
+
+    .social-menu-container {
+        width: auto;
+    }
+
+    .social-menu {
+        display: flex;
+        flex-flow: row nowrap;
+
+        li {
+            transition: opacity 0.25s;
+
+            a {
+                display: flex;
+                flex-flow: column nowrap;
+                align-items: center;
+
+                .icon {
+                    width: 3rem;
+                    height: 3rem;
+                    pointer-events: none;
+                }
+            }
+        }
+
+        li:not(:last-child) {
+            margin-right: 5.7rem;
+        }
+    }
+
+    &-bottom {
+        height: 5rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: $white;
+
+        p {
+            font-size: 1.4rem;
+            font-weight: $light;
+        }
+    }
+}
+
+.footer-contact-container {
+    display: flex;
+    flex-flow: column wrap;
+    width: auto;
+    
+    a {
+        display: flex;
+        width: 100%;
+        justify-content: flex-end;
+        align-items: center;
+        margin-right: 0;
+        transition: opacity 0.25s;
+
+        &:first-child {
+            margin-bottom: 1.6rem;
+        }
+
+        &:hover {
+            span {
+                opacity: 0.4;
+            }
+        }
+
+        &:active {
+            opacity: 1;
+        }
+    }
+}
+
+.contact-icon {
+    max-width: 1.2rem;
+    height: auto;
+    margin-right: 8px;
+}
+
+.contact-text {
+    font-weight: $regular;
+    font-size: 1.4rem;
+}
+
+#toTop {
+    display: block;
+    position: fixed;
+    z-index: 100;
+    bottom: 7rem;
+    right: 13rem;
+    padding: 2rem;
+    opacity: 0;
+    pointer-events: none;
+    transition: all 2s;
+    height: 3rem;
+    width: auto;
+    box-sizing: content-box;
+
+    &.run {
+        opacity: 1;
+        pointer-events: initial;
+        animation-name: RunUp;
+        animation-duration: 2000ms;
+        animation-timing-function: linear;
+        animation-iteration-count: infinite;
+        animation-play-state: running;
+        animation-delay: 1000ms;
+
+        &:hover {
+            animation-play-state: paused;
+        }
+
+        &.onFooter {
+            bottom: 34rem;
+        }
+    }
+
+    img {
+        transform: rotate(180deg);
+        height: 100%;
+        width: auto;
+        object-fit: none;
+        object-position: bottom;
+    }
+}
+
+@keyframes RunUp {
+    0% {
+        transform: translate3d(0,0,0);
+        opacity: 0;
+    }
+    33% {
+        opacity: 1;
+    }
+    66% {
+        opacity: 1;
+    }
+    100% {
+        -webkit-transform: translate3d(0,-3rem,0);
+        opacity: 0;
+    }
+}
+
+@media only screen and (max-width: 1024px) {
+    .footer {
+        padding-top: 0;
+
+        &__wrapper {
+            flex-flow: column nowrap;
+            padding: 3rem 0;
+        }
+
+        .site-branding {
+            margin-bottom: 3.2rem;
+            a {
+                img {
+                    width: 16.4rem;
+                }
+            }
+        }
+
+        .social-menu {
+            margin-bottom: 3rem;
+            li:not(:last-child){
+                margin-right: 3.7rem;
+            }
+        }
+
+        .footer-contact-container a:first-child {
+            margin-bottom: 1.8rem;
+        }
+    }
+
+    #toTop {
+        display: none;
+        right: 0.2rem;
+        bottom: 0.2rem;
+        transition: none;
+        &.run {
+            animation-delay: 500ms;
+    
+            &:hover {
+                animation-play-state: unset;
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 640px) {
+    #toTop {
+        position: fixed;
+        bottom: -0.6rem;
+        right: 0.1rem;
+        opacity: 1;
+        transition: none;
+        pointer-events: unset;
+    }
+}

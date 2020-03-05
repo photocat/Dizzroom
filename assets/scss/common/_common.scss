@@ -1,0 +1,78 @@
+/* common.scss */
+html {
+    font-size: 62.5%;
+    font-family: $main;
+}
+
+.main {
+    min-height: 70.4vh;
+}
+
+* {
+    color: $brown;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+.button {
+    background-color: $brown;
+    border: solid 1px $brown;
+    color: $white;
+    width: 19.3rem;
+    height: 3.8rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: $regular;
+    font-size: 1.6rem;
+    text-transform: uppercase;
+    transition: all 0.25s;
+    margin: 0 auto;
+
+    &:hover,
+    &:active {
+        background-color: $white;
+        color: $brown;
+    }
+}
+
+.contacts-wrapper {
+    max-width: 74.7rem;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.only-mobile {
+    display: none;
+}
+
+
+select {
+    display: none;
+}
+
+p,
+h1,h2,h3,
+span,
+a {
+    -webkit-font-smoothing: subpixel-antialiased;
+}
+
+@media only screen and (max-width: 1024px) {
+    .main {
+        min-height: 78.8vh;
+    }
+
+    .only-desktop {
+        display: none;
+    }
+
+    .only-mobile {
+        display: inline-block;
+    }
+}
+
+/* common.scss end */
