@@ -2361,6 +2361,7 @@ a {
   cursor: pointer;
   -webkit-transition: all 0.25s;
   transition: all 0.25s;
+  outline-width: 0;
 }
 
 .product-slider .product-slider__prev img,
