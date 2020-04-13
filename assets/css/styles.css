@@ -750,6 +750,10 @@ html {
   color: #40343A;
 }
 
+*:focus {
+  outline: none;
+}
+
 img {
   max-width: 100%;
   height: auto;
